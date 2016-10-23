@@ -1,0 +1,7 @@
+<?php
+function remove_log_field_form_alter(&$form, $form_state, $form_id) {
+  if (isset($form['#node']) && isset($form['revision_information']) && $form_id == $form['#node']->type .'_node_form') {
+    $form['revision_information']['#access'] = FALSE;
+  }
+}
+?>
